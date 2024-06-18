@@ -13,3 +13,17 @@ func ToSneakerFromRepo(s *repoModel.Sneaker) *model.Sneaker {
 		ImageUrl: s.ImageUrl,
 	}
 }
+func ToSneakerFromRepoList(s []repoModel.Sneaker) []*model.Sneaker {
+	list := make([]*model.Sneaker, 0, len(s))
+	for _, i := range s {
+		list = append(list, &model.Sneaker{
+			ID:        i.ID,
+			Title:     i.Title,
+			Price:     i.Price,
+			ImageUrl:  i.ImageUrl,
+			Available: i.Available,
+			CreatedAt: i.CreatedAt,
+			UpdatedAt: i.UpdatedAt,
+		})
+	}
+}

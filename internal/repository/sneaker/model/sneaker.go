@@ -1,8 +1,13 @@
 package model
 
+import "time"
+
 type Sneaker struct {
-	ID       int
-	Title    string
-	Price    int
-	ImageUrl string
+	ID        string
+	Title     string
+	Price     int
+	ImageUrl  string
+	Available bool
+	CreatedAt time.Time
+	UpdatedAt time.Time
 }
